@@ -59,7 +59,7 @@ while goblin.health and hero.health > 0:
     goblin.PrintStatus()
     print(f"The goblin has {goblin.health} health and {goblin.power} power.")
     print("What do you want to do?")
-    print("1. Fight Goblin")
+    print(f"1. Fight {enemy.name}")
     print("2. Do Nothing")
     print("3. Flee")
     print("> ", end=' ')
