@@ -1,28 +1,58 @@
+import random
+
 class Character(object):
-    def __init__(self, name, health, power):
+    def __init__(self, name, health, power, armor):
         self.name = name 
         self.health = health
         self.power = power
+        self.armor = armor
 
     def Alive(self):
         return self.health > 0
 
     def Attack(self,enemy):
-        enemy.health -= self.power
-        print(f"The {self.name} has done {self.power} damage to the {enemy.name}")
+        roll = rand.int(1,20)
+        if self.roll > enemy.roll:
+            enemy.health -= self.power * 2
+            print(f"The {self.name} has done {self.power} CRITICAL damage to the {enemy.name}!")
+        if self.roll < enemy.roll:
+            print(f"The {self.name} has done {self.power} damage to the {enemy.name}")
 
     def PrintStatus(self):
         print(f"{self.name} has {self.health} health left!")
 
 class Hero(Character):
     pass
-    
+
+class Medic(Character):
+    pass
+
+class Shadow(Character):
+    pass
 
 class Goblin(Character):
     pass
 
-hero = Hero('Hero',10, 5)
-goblin = Goblin('Goblin',6,2)
+class Zombie(Character):
+    pass
+
+class GunSlinger(Character):
+    pass
+
+class OverLord(Character):
+    pass
+
+class DarkKnight(Character):
+    pass
+
+
+darkknight = DarkKnight('Dark Knight', 50, 6, 12)
+gunslinger = GunSlinger('Gun Slinger', 23, 8, 7)
+zombie = Zombie('White Walker', 0, 1, 0)
+medic = Medic('Medic', 30, 4, 5)
+shadow = Shadow('Shadow',1 ,9, 4)
+hero = Hero('Hero',20, 10, 10)
+goblin = Goblin('Goblin', 12, 4, 3)
 
 while goblin.health and hero.health > 0:
     hero.PrintStatus()
