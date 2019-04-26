@@ -7,25 +7,20 @@ class Character(object):
     def Alive(self):
         return self.health > 0
 
-class Hero(Character):
-
     def Attack(self,enemy):
         enemy.health -= self.power
-        print(f"You do {self.power} damage to the goblin!")
-
+        print(f"The {self.name} has done {self.power} damage to the {enemy.name}")
 
     def PrintStatus(self):
         print(f"{self.name} has {self.health} health left!")
+
+class Hero(Character):
+    pass
+    
 
 class Goblin(Character):
+    pass
 
-    def Attack(self,enemy):
-        enemy.health -= self.power
-        print(f"You do {self.power} damage to the hero!")
-        
-
-    def PrintStatus(self):
-        print(f"{self.name} has {self.health} health left!")
 
 hero = Hero('Hero',10, 5)
 goblin = Goblin('Goblin',6,2)
